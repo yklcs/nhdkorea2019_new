@@ -42,6 +42,11 @@
           crossorigin="anonymous"
           src="https://linx.yunkyu.com/selif/qp1ie1gr.png"
         />
+        <img
+          id="earth"
+          crossorigin="anonymous"
+          src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_4096.jpg"
+        />
         <script id="link" type="text/html">
             <a-entity
             scene-changer="from: ${from}; to: ${to}"
@@ -96,22 +101,54 @@
 
 <a-entity id="scene-location" visible="false">
   <a-sky radius="150" color="#000000"></a-sky>
-  <a-sphere 
-    src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_4096.jpg"
+  <a-sphere
+    visible="false"
+    src="#earth"
     radius="2"
     segments-height="53"
     position="0 1 -4"
     rotation="-20 140 16"
-    scene-changer="from: location; to: location"
+    scene-changer="from: location; to: joseon"
+    scene-deleter="tgt: location;"
   ></a-sphere>
   <a-entity
-    template="src: #link"
-    data-thumb="#korea"
-    data-from="location"
-    data-to="location"
+    text="value: Click South Korea!; align: center; width: 3.5;"
+    position="0 1.15 -1.7"
+  ></a-entity>
+  <a-entity
+    text="value: &uarr;; align:center; width: 4;"
+    position="0 1.25 -1.7"
   ></a-entity>
 </a-entity>
 
+<a-entity id="scene-joseon" visible="false">
+  <a-sky color="#9bd1fd"></a-sky>
+  <a-plane
+    src="#dirt"
+    position="0 0 -11"
+    rotation="-90 0 0"
+    width="50"
+    height="200"
+    repeat="20 80"
+  ></a-plane>
+  <a-gltf-model 
+    position="19.47219 1.52765 -221.94797" 
+    src="#gwanghwamun" 
+    scale="0.9 0.9 0.9" 
+    gltf-model="https://linx.yunkyu.com/selif/gwanghwamun.gltf" 
+    visible="" 
+    rotation="0 2 0">
+  </a-gltf-model>
+  <a-entity
+  visible="false"
+  template="src: #link"
+  data-thumb="#thumb-home"
+  data-from="joseon"
+  data-to="null"
+  position="0 0.1 0"
+  rotation="-90 0 0"
+></a-entity>
+</a-entity>
 
     </a-scene>
   </body>

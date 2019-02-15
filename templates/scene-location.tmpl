@@ -1,18 +1,21 @@
 <a-entity id="scene-location" visible="false">
   <a-sky radius="150" color="#000000"></a-sky>
-  <a-sphere 
-    src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_4096.jpg"
+  <a-sphere
+    visible="false"
+    src="#earth"
     radius="2"
     segments-height="53"
     position="0 1 -4"
     rotation="-20 140 16"
-    scene-changer="from: location; to: location"
+    scene-changer="from: location; to: joseon"
+    scene-deleter="tgt: location;"
   ></a-sphere>
   <a-entity
-    template="src: #link"
-    data-thumb="#korea"
-    data-from="location"
-    data-to="location"
+    text="value: Click South Korea!; align: center; width: 3.5;"
+    position="0 1.15 -1.7"
+  ></a-entity>
+  <a-entity
+    text="value: &uarr;; align:center; width: 4;"
+    position="0 1.25 -1.7"
   ></a-entity>
 </a-entity>
-
