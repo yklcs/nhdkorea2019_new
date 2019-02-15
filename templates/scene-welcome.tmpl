@@ -4,14 +4,20 @@
     text="value: Gwanghwamun: A Virtual Experience; align: center; width: 5;"
     position="0 1.5 -1.7"
   ></a-entity> 
-  <a-entity
+
+  <a-plane
     scene-deleter="tgt: welcome;"
     visible="true"
-    template="src: #link"
-    data-thumb="#thumb-1"
-    data-from="welcome"
-    data-to="earth"
-    rotation="330 0 0"
-    position="0 0.866 -1.412"
+    src="https://linx.yunkyu.com/selif/p0rpmhk0.png"
+    scene-changer="from: welcome; to: earth"
+    position="0 0.9 -1.4"
+    scale="1.2 0.6 1"
+    rotation="-20 0 0"
+  ></a-plane>
+
+  <a-entity
+    text="value: To click, hold your cursor still for a second.; align: center; width: 2;"
+    position="0 1.8 -1.7"
   ></a-entity>
+
 </a-entity>
