@@ -87,17 +87,15 @@
     text="value: Gwanghwamun: A Virtual Experience; align: center; width: 5;"
     position="0 1.5 -1.7"
   ></a-entity> 
-
   <a-plane
+    scene-changer="from: welcome; to: earth"
     scene-deleter="tgt: welcome;"
     visible="true"
     src="https://linx.yunkyu.com/selif/p0rpmhk0.png"
-    scene-changer="from: welcome; to: earth"
     position="0 0.9 -1.4"
     scale="1.2 0.6 1"
     rotation="-20 0 0"
   ></a-plane>
-
   <a-entity
     text="value: To click, hold your cursor still for a second.; align: center; width: 2;"
     position="0 1.8 -1.7"
@@ -147,7 +145,7 @@
     width="7"
     height="5"
   ></a-plane>
-  
+
 </a-entity>
   
 <a-entity id="scene-joseon" visible="false">
@@ -176,6 +174,10 @@
     scale="4 0.65 8"
     position="0 0.5 -4"
   ></a-plane>  
+  <a-entity
+    text="value: Click the text to see the next page.;  align: center; width: 4;"
+    position="0 1 -4"
+  ></a-entity> 
 </a-entity>
 
 <a-entity id="scene-joseon2" visible="false">
@@ -214,15 +216,48 @@
 <a-entity id="scene-modern" visible="false">
     <a-sky src="https://linx.yunkyu.com/selif/uodj4o21.jpg"></a-sky>
     <a-plane
-      src="#dirt"
-      position="0 0 -11"
-      rotation="-90 0 0"
-      width="50"
-      height="200"
-      repeat="20 80"
-    ></a-plane>
+    visible="false"
+    src="https://linx.yunkyu.com/selif/ehb86mx7.png"
+    scale="4 0.7 8"
+    position="0 1.5 -4"
+  ></a-plane>
   </a-entity>
   
+<a-entity id="scene-japan" visible="false">
+  <a-sky color="#000000"></a-sky>
+  <a-plane
+    visible="false"
+    src="https://linx.yunkyu.com/selif/fhgd8a6i.png"
+    scene-changer="from: japan; to: japan2"
+    scene-deleter="tgt: japan;"
+    scale="4 0.65 8"
+    position="0 0.5 -4"
+  ></a-plane>
+  <a-plane
+    material="shader: flat; src: https://linx.yunkyu.com/selif/295z3064.jpg"
+    position="0 3 -4"
+    width="5"
+    height="3"
+  ></a-plane>
+</a-entity>
+
+<a-entity id="scene-japan2" visible="false">
+  <a-sky color="#000000"></a-sky>
+  <a-plane
+    visible="false"
+    src="https://linx.yunkyu.com/selif/vja3t5i5.png"
+    scene-changer="from: japan2; to: modern"
+    scene-deleter="tgt: japan2;"
+    scale="4 0.55 8"
+    position="0 0.5 -4"
+  ></a-plane>
+  <a-plane
+    material="shader: flat; src: https://linx.yunkyu.com/selif/z620v7kr.png"
+    position="0 3 -4"
+    width="5"
+    height="3"
+  ></a-plane>
+</a-entity>
 
     </a-scene>
   </body>
