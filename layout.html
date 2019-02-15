@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/aframe@0.8.2/dist/aframe-master.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@latest/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@latest/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@latest/dist/aframe-event-set-component.min.js"></script>
+    <script src="components/scene-changer-component.js"></script>
+    <script src="components/scene-deleter-component.js"></script>
+  </head>
+  <body>
+    <a-scene stats>
+{{ index . "assets" }}
+{{ index . "cameras" }}
+{{ index . "scene-welcome" }}
+{{ index . "scene-location" }}
+    </a-scene>
+  </body>
+</html>

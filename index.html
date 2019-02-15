@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/aframe@0.8.2/dist/aframe-master.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@latest/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@latest/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@latest/dist/aframe-event-set-component.min.js"></script>
+    <script src="components/scene-changer-component.js"></script>
+    <script src="components/scene-deleter-component.js"></script>
+  </head>
+  <body>
+    <a-scene stats>
+      <a-assets>
+        <a-asset-item id="gwanghwamun" src="https://linx.yunkyu.com/selif/ap2kybiw.gltf"></a-asset-item> 
+        <img id="background" src="https://linx.yunkyu.com/selif/bckgnd.jpg" />
+        <img
+          id="thumb-1"
+          crossorigin="anonymous"
+          src="https://linx.yunkyu.com/selif/ms7q2b0w.png"
+        />
+        <img
+          id="thumb-2"
+          crossorigin="anonymous"
+          src="https://linx.yunkyu.com/selif/6s7hxgp6.png"
+        />
+        <img
+          id="thumb-3"
+          crossorigin="anonymous"
+          src="https://linx.yunkyu.com/selif/89utcvfm.png"
+        />
+        <img
+          id="thumb-home"
+          crossorigin="anonymous"
+          src="https://linx.yunkyu.com/selif/grw6nocw.png"
+        />
+        <img
+          id="dirt"
+          crossorigin="anonymous"
+          src="https://linx.yunkyu.com/selif/au3qqvbf.png"
+        />
+        <script id="link" type="text/html">
+            <a-entity
+            scene-changer="from: ${from}; to: ${to}"
+            geometry="primitive: plane; height: 1; width: 1"
+            material="shader: flat; src: ${thumb}"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.1 1.1 1"
+            event-set__3="_event: mouseenter; scale: 1.1 1.1 1"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+          ></a-entity>
+        </script>
+      </a-assets>
+
+      <a-entity id="camera-look" visible="true" camera="active: true" look-controls="touchEnabled: true" position="0 1.5 0">
+        <a-cursor>
+          <a-animation
+            begin="click"
+            easing="ease-in"
+            attribute="scale"
+            fill="backwards"
+            from="0.1 0.1 0.1"
+            to="1 1 1"
+            dur="150"
+          ></a-animation>
+          <a-animation
+            begin="cursor-fusing"
+            easing="ease-in"
+            attribute="scale"
+            from="1 1 1"
+            to="0.1 0.1 0.1"
+            dur="1500"
+          ></a-animation>
+        </a-cursor>
+      </a-entity>
+<a-entity id="scene-welcome" visible="true">
+  <a-sky radius="150" color="#000000"></a-sky>
+  <a-entity
+    text="value: Gwanghwamun: A Virtual Experience; align: center; width: 5;"
+    position="0 1.5 -1.7"
+  ></a-entity> 
+  <a-entity
+    scene-deleter="tgt: welcome;"
+    visible="true"
+    template="src: #link"
+    data-thumb="#thumb-1"
+    data-from="welcome"
+    data-to="location"
+    rotation="330 0 0"
+    position="0 0.866 -1.412"
+  ></a-entity>
+</a-entity>
+
+<a-entity id="scene-location" visible="false">
+  <a-sky radius="150" color="#000000"></a-sky>
+  <a-sphere 
+    src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_4096.jpg"
+    radius="2"
+    segments-height="53"
+    position="0 0 -4"
+    rotation="-20 140 16"
+    event-set__1="_event: mousedown; scale: 1 1 1"
+    event-set__2="_event: mouseup; scale: 1.1 1.1 1"
+    event-set__3="_event: mouseenter; scale: 1.1 1.1 1"
+    event-set__4="_event: mouseleave; scale: 1 1 1"
+    scene-changer="from: location; to: location"
+  ></a-sphere>
+</a-entity>
+
+
+    </a-scene>
+  </body>
+</html>
