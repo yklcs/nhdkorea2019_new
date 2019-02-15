@@ -162,22 +162,34 @@
     rotation="0 2 0">
   </a-gltf-model>
   <a-entity
-    text="value: Gwanghwamun is the central gate of Korean Gyeongbokgung Palace during the Joseon dynasty.;"
-    position="0 2 -1.3"
-  ></a-entity>
-  <!--
-  <a-plane
-    material="shader: flat; src: https://linx.yunkyu.com/selif/t63enrq0.png"
-    visible="false"
-    scene-changer="from: korea; to: seoul"
-    scene-deleter="tgt: korea;"
-    position="0 1.5 -3"
-    width="7"
-    height="5"
-  ></a-plane>
--->
+    scene-changer="from: joseon; to: joseon2"
+    scene-deleter="tgt: joseon;"
+    text="value: Gwanghwamun is the central gate of Korean 
+    Gyeongbokgung Palace during the Joseon dynasty. It means 
+    'The king’s great virtue shines on the whole country.' ”; width: 2;"
+    position="0.2 2 -1.3"
+  ></a-entity>  
 </a-entity>
 
+<a-entity id="scene-joseon" visible="false">
+  <a-sky color="#9bd1fd"></a-sky>
+  <a-plane
+    src="#dirt"
+    position="0 0 -11"
+    rotation="-90 0 0"
+    width="50"
+    height="200"
+    repeat="20 80"
+  ></a-plane>
+  <a-gltf-model 
+    position="19.47219 1.52765 -221.94797" 
+    src="#gwanghwamun" 
+    scale="0.9 0.9 0.9" 
+    gltf-model="https://linx.yunkyu.com/selif/gwanghwamun.gltf" 
+    visible="" 
+    rotation="0 2 0">
+  </a-gltf-model>
+</a-entity>
 
     </a-scene>
   </body>
