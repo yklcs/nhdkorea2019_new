@@ -1,0 +1,17 @@
+<a-entity id="scene-earth" visible="false">
+  <a-sky radius="150" color="#000000"></a-sky>
+  <a-sphere
+    visible="false"
+    src="#earth"
+    radius="2"
+    segments-height="53"
+    position="0 1 -4"
+    rotation="-20 140 16"
+    scene-changer="from: earth; to: korea"
+    scene-deleter="tgt: earth;"
+  ></a-sphere>
+  <a-entity
+    text="value: [South Korea]; align: center; width: 3;"
+    position="0 1.2 -1.7"
+  ></a-entity>
+</a-entity>
